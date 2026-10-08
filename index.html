@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Learn about St. Joseph's Degree College, its departments, values, and contact information.">
+  <title>St. Joseph's Degree College</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #172a45;
+      --muted: #566273;
+      --paper: #f7f5ef;
+      --white: #fffefa;
+      --green: #326b57;
+      --gold: #c59542;
+      --line: #e5e1d6;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: var(--sans);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .topline {
+      background: var(--ink);
+      color: #f7f5ef;
+      font-size: .76rem;
+      letter-spacing: .04em;
+    }
+
+    .navbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand-logo {
+      display: block;
+      width: min(100%, 330px);
+      height: auto;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--ink);
+      font-size: .9rem;
+      font-weight: 600;
+      padding: .65rem .85rem !important;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+      color: var(--green);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--paper);
+      background-image: radial-gradient(#d9d4c7 0.7px, transparent 0.7px);
+      background-size: 17px 17px;
+    }
+
+    .hero::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 36%;
+      background: rgba(50, 107, 87, .055);
+      content: "";
+    }
+
+    .hero-inner {
+      position: relative;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      color: var(--green);
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+      content: "";
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--serif);
+    }
+
+    .hero h1 {
+      max-width: 650px;
+      margin: 1rem 0 1.2rem;
+      font-size: clamp(2.75rem, 5vw, 4.65rem);
+      line-height: 1.08;
+    }
+
+    .hero-copy {
+      max-width: 580px;
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.85;
+    }
+
+    .button-main {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: .75rem 1.2rem;
+      border: 1px solid var(--green);
+      background: var(--green);
+      color: white;
+      font-size: .9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color .18s ease, color .18s ease;
+    }
+
+    .button-main:hover {
+      background: #285643;
+      color: white;
+    }
+
+    .button-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: .75rem 1.2rem;
+      border: 1px solid #c9c6bc;
+      color: var(--ink);
+      font-size: .9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: border-color .18s ease, color .18s ease;
+    }
+
+    .button-outline:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .logo-panel {
+      min-height: 230px;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+      border: 1px solid rgba(23, 42, 69, .12);
+      background: rgba(255, 254, 250, .88);
+      box-shadow: 12px 12px 0 rgba(197, 149, 66, .14);
+    }
+
+    .logo-panel img {
+      display: block;
+      width: min(100%, 430px);
+      height: auto;
+    }
+
+    .section-kicker {
+      color: var(--green);
+      font-size: .73rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: .55rem 0 0;
+      font-size: clamp(2rem, 3.3vw, 3rem);
+      line-height: 1.2;
+    }
+
+    .about-section {
+      background: var(--white);
+    }
+
+    .about-copy {
+      max-width: 740px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .about-aside {
+      border-left: 3px solid var(--gold);
+      padding: .2rem 0 .2rem 1.25rem;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .departments-section {
+      background: var(--paper);
+    }
+
+    .department-item {
+      position: relative;
+      min-height: 138px;
+      height: 100%;
+      padding: 1.35rem 1.4rem;
+      border: 1px solid var(--line);
+      background: var(--white);
+      text-decoration: none;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .department-item:hover,
+    .department-item:focus-visible {
+      transform: translateY(-3px);
+      border-color: rgba(50, 107, 87, .55);
+      box-shadow: 0 8px 22px rgba(23, 42, 69, .07);
+    }
+
+    .department-number {
+      color: var(--gold);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    .department-item h3 {
+      margin: .7rem 0 0;
+      font-size: 1.45rem;
+    }
+
+    .department-arrow {
+      position: absolute;
+      right: 1.4rem;
+      bottom: 1.3rem;
+      color: var(--green);
+      font-size: 1.2rem;
+    }
+
+    .contact-section {
+      background: var(--ink);
+      color: #fffefa;
+    }
+
+    .contact-section .section-kicker {
+      color: #d8b878;
+    }
+
+    .contact-section .section-title {
+      color: #fffefa;
+    }
+
+    .contact-intro {
+      max-width: 480px;
+      color: #d2d9e1;
+      line-height: 1.8;
+    }
+
+    .contact-link {
+      display: block;
+      padding: .95rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .2);
+      color: #fffefa;
+      font-size: 1.04rem;
+      text-decoration: none;
+    }
+
+    .contact-link span {
+      display: block;
+      margin-bottom: .25rem;
+      color: #d8b878;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .contact-link:hover {
+      color: #d8b878;
+    }
+
+    footer {
+      background: #102037;
+      color: #c2cbd5;
+      font-size: .82rem;
+    }
+
+    @media (max-width: 767.98px) {
+      .topline {
+        font-size: .69rem;
+      }
+
+      .brand-logo {
+        width: min(100%, 270px);
+      }
+
+      .hero::before {
+        top: auto;
+        width: 100%;
+        height: 33%;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.55rem, 11vw, 3.7rem);
+      }
+
+      .logo-panel {
+        min-height: 180px;
+        padding: 1.5rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topline py-2">
+    <div class="container d-flex flex-wrap justify-content-between gap-2">
+      <span>Self-financed · Co-education · No grant-in-aid</span>
+      <span>Sunkesula Road, Kurnool, Andhra Pradesh</span>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg py-3" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand m-0" href="#home" aria-label="St. Joseph's Degree College home">
+        <img class="brand-logo" src="images/logo-primary.png"
+          alt="St. Joseph's Degree College, Sunkesula Road, Kurnool">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNavigation"
+        aria-controls="siteNavigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="siteNavigation">
+        <ul class="navbar-nav ms-auto align-items-lg-center pt-3 pt-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#departments">Departments</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="home">
+    <section class="hero py-5 py-lg-6">
+      <div class="container hero-inner py-lg-5">
+        <div class="row align-items-center g-5 py-3 py-lg-4">
+          <div class="col-lg-7">
+            <span class="eyebrow">St. Joseph's Degree College</span>
+            <h1>Education for life, rooted in values.</h1>
+            <p class="hero-copy mb-4">A co-educational college serving the cause of education with sincere effort,
+              preparing students for life through the values of Indian culture and tradition.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a class="button-main" href="#departments">Explore departments</a>
+              <a class="button-outline" href="#about">About the college</a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="logo-panel">
+              <img src="images/logo-primary.png" alt="St. Joseph's Degree College crest and wordmark">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section py-5 py-lg-6" id="about">
+      <div class="container py-lg-4">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-8">
+            <span class="section-kicker">Our college</span>
+            <h2 class="section-title mb-4">A tradition of education and service</h2>
+            <p class="about-copy mb-0">St. Joseph's Degree College is governed by St. Joseph's Educational Society,
+              registered under the Societies Registration Act XXI of 1860 (Society No. 19 of 1967). The college has been
+              serving the cause of education with sincere efforts, preparing students for life while imbibing the values
+              of Indian culture and tradition. It is a self-financed co-education college without grant-in-aid.</p>
+          </div>
+          <div class="col-lg-4 pt-lg-5">
+            <p class="about-aside mb-0">Learning shaped by education, culture, and tradition.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="departments-section py-5 py-lg-6" id="departments">
+      <div class="container py-lg-4">
+        <div class="row align-items-end mb-4 mb-lg-5">
+          <div class="col-lg-8">
+            <span class="section-kicker">Explore</span>
+            <h2 class="section-title">Departments &amp; student services</h2>
+          </div>
+        </div>
+        <div class="row g-3">
+          <div class="col-sm-6 col-lg-4"><a class="department-item d-block" href="#contact"><span
+                class="department-number">01</span>
+              <h3>English</h3><span class="department-arrow" aria-hidden="true">&#8599;</span>
+            </a></div>
+          <div class="col-sm-6 col-lg-4"><a class="department-item d-block" href="#contact"><span
+                class="department-number">02</span>
+              <h3>Maths</h3><span class="department-arrow" aria-hidden="true">&#8599;</span>
+            </a></div>
+          <div class="col-sm-6 col-lg-4"><a class="department-item d-block" href="#contact"><span
+                class="department-number">03</span>
+              <h3>Science</h3><span class="department-arrow" aria-hidden="true">&#8599;</span>
+            </a></div>
+          <div class="col-sm-6 col-lg-4"><a class="department-item d-block" href="#contact"><span
+                class="department-number">04</span>
+              <h3>Placement</h3><span class="department-arrow" aria-hidden="true">&#8599;</span>
+            </a></div>
+          <div class="col-sm-6 col-lg-4"><a class="department-item d-block" href="#contact"><span
+                class="department-number">05</span>
+              <h3>NSS</h3><span class="department-arrow" aria-hidden="true">&#8599;</span>
+            </a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section py-5 py-lg-6" id="contact">
+      <div class="container py-lg-4">
+        <div class="row g-5">
+          <div class="col-lg-7">
+            <span class="section-kicker">Get in touch</span>
+            <h2 class="section-title mb-3">Contact the college</h2>
+            <p class="contact-intro mb-0">For enquiries, reach St. Joseph's Degree College by phone or email.</p>
+          </div>
+          <div class="col-lg-5">
+            <a class="contact-link" href="tel:+918518226268"><span>Call us</span>085182 26268</a>
+            <a class="contact-link" href="mailto:sjcknl@yahoo.com"><span>Email us</span>sjcknl@yahoo.com</a>
+            <p class="mt-3 mb-0 text-white-50">Sunkesula Road, Kurnool, Andhra Pradesh</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-3">
+    <div class="container d-flex flex-wrap justify-content-between gap-2">
+      <span>St. Joseph's Degree College</span>
+      <span>Kurnool, Andhra Pradesh</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
